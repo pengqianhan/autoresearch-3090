@@ -430,7 +430,7 @@ class MuonAdamW(torch.optim.Optimizer):
 # ---------------------------------------------------------------------------
 
 # Model architecture
-ASPECT_RATIO = 64       # model_dim = depth * ASPECT_RATIO
+ASPECT_RATIO = 48       # smaller default width to fit 24 GB-class GPUs
 HEAD_DIM = 128          # target head dimension for attention
 WINDOW_PATTERN = "SSSL" # sliding window pattern: L=full, S=half context
 
@@ -447,8 +447,8 @@ WARMDOWN_RATIO = 0.5    # fraction of time budget for LR warmdown
 FINAL_LR_FRAC = 0.0     # final LR as fraction of initial
 
 # Model size
-DEPTH = 8               # number of transformer layers
-DEVICE_BATCH_SIZE = 128  # per-device batch size (reduce if OOM)
+DEPTH = 6               # smaller default model to avoid CUDA OOM on non-H100 setups
+DEVICE_BATCH_SIZE = 32   # lower batch keeps logits/activation memory within 24 GB-class GPUs
 
 # ---------------------------------------------------------------------------
 # Setup: tokenizer, model, optimizer, dataloader
