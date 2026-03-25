@@ -115,10 +115,13 @@ class Block(nn.Module):
         super().__init__()
         self.attn = CausalSelfAttention(config, layer_idx)
         self.mlp = MLP(config)
+        # MLP scale decays from 0.8 to 0.6 over depth
+        t = layer_idx / max(config.n_layer - 1, 1)
+        self.mlp_scale = 0.8 - 0.2 * t
 
     def forward(self, x, ve, cos_sin, window_size):
         x = x + self.attn(norm(x), ve, cos_sin, window_size)
-        x = x + 0.7 * self.mlp(norm(x))
+        x = x + self.mlp_scale * self.mlp(norm(x))
         return x
 
 
