@@ -1,0 +1,21 @@
+# Progress
+
+- 2026-03-31: Initialized planning files for extracting high-value Claude traces into `experience/`.
+- 2026-03-31: Copied the main session JSONL into `experience/claude-session/main/`.
+- 2026-03-31: Copied 12 subagent JSONLs into `experience/claude-session/subagents/`.
+- 2026-03-31: Copied 4 tool result files into `experience/claude-session/tool-results/`.
+- 2026-03-31: Added `experience/README.md` documenting the retained artifacts and retrieval order.
+- 2026-03-31: Added `scripts/extract_claude_experience.py` to parse raw Claude traces into structured outputs.
+- 2026-03-31: Generated `experience/structured/{manifest,summary,file_reads,experiments,events}.json*`.
+- 2026-03-31: Added `experience/structured/README.md` describing the structured outputs and their current scope.
+- 2026-03-31: Added `scripts/run_meta_harness.py` as a minimal automated outer-loop runner for `program.md`.
+- 2026-03-31: Added `meta_harness/config.example.json` with proposer/evaluator command templates and repo-specific defaults.
+- 2026-03-31: Added `meta_harness/README.md` documenting how to run the automated Meta-Harness loop.
+- 2026-03-31: Updated `.gitignore` to ignore runtime directories `meta_harness/runs/` and `meta_harness/workspaces/`.
+- 2026-03-31: Performed a dry run with `iterations=0` to validate seed initialization and state-file creation.
+- 2026-04-01: Added `meta_harness/config.json` with this machine's Claude CLI path and explicit `--add-dir` usage.
+- 2026-04-01: Added `meta_harness/config.smoke.json` for bounded one-iteration smoke testing.
+- 2026-04-01: Ran a real smoke test; the outer loop initialized successfully but stalled during proposer execution before evaluator startup.
+- 2026-04-01: Added `scripts/run_claude_proposer.sh` and `scripts/run_claude_evaluator.sh` wrappers and switched runtime configs to use them.
+- 2026-04-01: Fixed `run_meta_harness.py` so `--iterations 0` now correctly overrides config values.
+- 2026-04-01: Extended proposer wrapper with adapter debug modes (`prompt`, `stdin`, `json`) and verified the wrapper mode switch works.

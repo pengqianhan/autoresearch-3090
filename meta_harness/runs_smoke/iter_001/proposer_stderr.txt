@@ -1,0 +1,4 @@
+[proposer-wrapper] start 2026-04-01T10:15:24+13:00
+[proposer-wrapper] cwd=/home/phan635/AI_researcher/autoresearch-pq/meta_harness/runs_smoke/iter_001
+[proposer-wrapper] candidate_dir=/home/phan635/AI_researcher/autoresearch-pq/meta_harness/runs_smoke/iter_001
+[proposer-wrapper] candidate_program=/home/phan635/AI_researcher/autoresearch-pq/meta_harness/runs_smoke/iter_001/candidate_program.md

@@ -1,0 +1,34 @@
+{
+  "seed_program": "program.md",
+  "experience_dir": "experience/structured",
+  "runs_dir": "meta_harness/runs",
+  "workspace_dir": "meta_harness/workspaces",
+  "iterations": 3,
+  "evaluator_timeout_sec": 1800,
+  "user_prompt": "Hi have a look at program.md and let's kick off a new experiment! I am going to sleep",
+  "proposer": {
+    "command": "{repo_root}/scripts/run_claude_proposer.sh",
+    "cwd_mode": "candidate_dir",
+    "timeout_sec": 900
+  },
+  "evaluator": {
+    "command": "{repo_root}/scripts/run_claude_evaluator.sh",
+    "cwd_mode": "workspace_dir"
+  },
+  "trace_copy": {
+    "enabled": true,
+    "claude_projects_dir": "/home/phan635/.claude/projects"
+  },
+  "copy_ignore": [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "experience",
+    "meta_harness/runs",
+    "meta_harness/workspaces",
+    "worktrees",
+    "results",
+    "queue",
+    "dev"
+  ]
+}

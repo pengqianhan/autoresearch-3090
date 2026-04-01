@@ -1,0 +1,28 @@
+You are optimizing the harness for the autoresearch repo.
+
+Goal:
+- Improve program.md as a harness for Claude Code so that bounded evaluation runs achieve lower best val_bpb.
+
+Rules:
+- Edit only candidate_program.md.
+- Keep the file coherent and executable as instructions for the agent.
+- Prefer changes that improve experimental discipline, credit assignment, and use of prior results.
+- Do not modify train.py or prepare.py here.
+
+Context:
+- Repo root: /home/phan635/AI_researcher/autoresearch-pq
+- Structured experience dir: /home/phan635/AI_researcher/autoresearch-pq/experience/structured
+- Parent harness: /home/phan635/AI_researcher/autoresearch-pq/meta_harness/runs_smoke/seed/candidate_program.md
+- Candidate to edit: /home/phan635/AI_researcher/autoresearch-pq/meta_harness/runs_smoke/iter_001/candidate_program.md
+- History summary: /home/phan635/AI_researcher/autoresearch-pq/meta_harness/runs_smoke/iter_001/history.json
+- Iteration: 1
+
+What to inspect before editing:
+- experience/structured/summary.json
+- experience/structured/experiments.json
+- experience/structured/file_reads.json
+- the parent harness
+
+Deliverable:
+- Write the improved harness into candidate_program.md.
+- Keep it concise and focused on actual behavior changes.

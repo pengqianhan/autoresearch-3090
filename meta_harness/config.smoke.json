@@ -1,0 +1,36 @@
+{
+  "seed_program": "program.md",
+  "experience_dir": "experience/structured",
+  "runs_dir": "meta_harness/runs_smoke",
+  "workspace_dir": "meta_harness/workspaces_smoke",
+  "iterations": 1,
+  "evaluator_timeout_sec": 1800,
+  "user_prompt": "Hi have a look at program.md and let's kick off a new experiment! This is a smoke test. Do setup if needed, run at most one completed training experiment, record the result, and then stop. Do not continue looping forever.",
+  "proposer": {
+    "command": "{repo_root}/scripts/run_claude_proposer.sh",
+    "cwd_mode": "candidate_dir",
+    "timeout_sec": 900
+  },
+  "evaluator": {
+    "command": "{repo_root}/scripts/run_claude_evaluator.sh",
+    "cwd_mode": "workspace_dir"
+  },
+  "trace_copy": {
+    "enabled": true,
+    "claude_projects_dir": "/home/phan635/.claude/projects"
+  },
+  "copy_ignore": [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "experience",
+    "meta_harness/runs",
+    "meta_harness/workspaces",
+    "meta_harness/runs_smoke",
+    "meta_harness/workspaces_smoke",
+    "worktrees",
+    "results",
+    "queue",
+    "dev"
+  ]
+}

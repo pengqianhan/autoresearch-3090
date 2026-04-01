@@ -1,0 +1,33 @@
+{
+  "seed_program": "program.md",
+  "experience_dir": "experience/structured",
+  "runs_dir": "meta_harness/runs",
+  "workspace_dir": "meta_harness/workspaces",
+  "iterations": 3,
+  "evaluator_timeout_sec": 1800,
+  "user_prompt": "Hi have a look at program.md and let's kick off a new experiment! I am going to sleep",
+  "proposer": {
+    "command": "claude -p --permission-mode bypassPermissions --allowedTools 'Read Edit Write Bash(git:*) Bash(rg:*) Bash(ls:*) Bash(cat:*)' --append-system-prompt \"$(cat proposer_prompt.txt)\" \"Edit candidate_program.md in the current directory.\"",
+    "cwd_mode": "candidate_dir"
+  },
+  "evaluator": {
+    "command": "claude -p --permission-mode bypassPermissions --allowedTools 'Read Edit Write Bash' \"${MH_USER_PROMPT}\"",
+    "cwd_mode": "workspace_dir"
+  },
+  "trace_copy": {
+    "enabled": true,
+    "claude_projects_dir": "/home/phan635/.claude/projects"
+  },
+  "copy_ignore": [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "experience",
+    "meta_harness/runs",
+    "meta_harness/workspaces",
+    "worktrees",
+    "results",
+    "queue",
+    "dev"
+  ]
+}

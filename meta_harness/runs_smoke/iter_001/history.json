@@ -1,0 +1,27 @@
+{
+  "seed_result": {
+    "iteration": 0,
+    "candidate_dir": "/home/phan635/AI_researcher/autoresearch-pq/meta_harness/runs_smoke/seed",
+    "parent_iteration": null,
+    "score": null,
+    "peak_vram_mb": null,
+    "status": "seed_only",
+    "program_path": "/home/phan635/AI_researcher/autoresearch-pq/meta_harness/runs_smoke/seed/candidate_program.md",
+    "workspace_dir": "",
+    "trace_dir": null,
+    "notes": "Seed harness copied from repo program.md"
+  },
+  "existing_candidates": [],
+  "selected_parent": {
+    "iteration": 0,
+    "candidate_dir": "/home/phan635/AI_researcher/autoresearch-pq/meta_harness/runs_smoke/seed",
+    "parent_iteration": null,
+    "score": null,
+    "peak_vram_mb": null,
+    "status": "seed_only",
+    "program_path": "/home/phan635/AI_researcher/autoresearch-pq/meta_harness/runs_smoke/seed/candidate_program.md",
+    "workspace_dir": "",
+    "trace_dir": null,
+    "notes": "Seed harness copied from repo program.md"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "iteration": 1,
+  "candidate_dir": "/home/phan635/AI_researcher/autoresearch-pq/meta_harness/runs_smoke/iter_001",
+  "parent_iteration": 0,
+  "score": null,
+  "peak_vram_mb": null,
+  "status": "proposer_failed",
+  "program_path": "/home/phan635/AI_researcher/autoresearch-pq/meta_harness/runs_smoke/iter_001/candidate_program.md",
+  "workspace_dir": "",
+  "trace_dir": null,
+  "notes": "proposer_rc=1 proposer_timed_out=False"
+}

@@ -1,0 +1,22 @@
+# Findings
+
+- The prior Claude run data lives under `/home/phan635/.claude/projects/-home-phan635-AI-researcher-autoresearch-pq`.
+- The main high-value artifact is `cb0c7479-9630-4814-b0d0-b97fa80352a5.jsonl`.
+- The session directory also contains `subagents/` JSONL logs and `tool-results/` text files.
+- The main JSONL includes user/assistant messages, tool calls, tool results, timestamps, cwd, and branch metadata.
+- Copied high-value artifacts into `experience/claude-session/`.
+- Final copied counts: 1 main session JSONL, 12 subagent JSONLs, 4 tool result files.
+- Structured extraction now lives in `experience/structured/`.
+- Current structured counts: 12,822 flattened main-session events and 669 experiment records.
+- Most-read file in the main session was `train.py` (623 reads), followed by `results.tsv` (52 reads).
+- Claude CLI is installed at `/home/phan635/.local/bin/claude`.
+- A minimal automated Meta-Harness scaffold now exists:
+  - `scripts/run_meta_harness.py`
+  - `meta_harness/config.example.json`
+  - `meta_harness/README.md`
+- The loop is intentionally command-configurable: proposer and evaluator are external shell commands, so local Claude auth/runtime behavior is not hard-coded as guaranteed.
+- The current score extractor is repo-specific and reads `results.tsv` first, then falls back to `run.log`.
+- A real smoke test with `meta_harness/config.smoke.json` initialized the outer loop correctly but stalled in the proposer phase before any evaluator workspace was created.
+- The proposer subprocess produced no stdout/stderr and did not update `candidate_program.md`, which suggests the current `claude -p` invocation is not yet reliably returning in this non-interactive child-process path.
+- The wrapper-based proposer adapter now supports explicit modes (`prompt`, `stdin`, `json`) and logs its selected mode before launching Claude.
+- Testing with `MH_CLAUDE_PROPOSER_MODE=stdin` showed the wrapper switched modes correctly, but the Claude subprocess still did not return or edit `candidate_program.md` within the short validation window.

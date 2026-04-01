@@ -18,6 +18,8 @@ AGENTS.md
 
 # Experimental code/artifacts
 dev/
-
+meta_harness/runs/
+meta_harness/workspaces/
+experience
 # Results file
 # results.tsv

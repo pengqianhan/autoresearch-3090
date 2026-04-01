@@ -1,0 +1,5 @@
+interface:
+  display_name: "Meta Harness Proposer"
+  short_description: "Optimize program.md from trace-based Meta-Harness feedback"
+  default_prompt: |
+    Use $meta-harness-proposer. Act as the proposer in a Meta-Harness loop: inspect the repo's structured experience, identify concrete harness-level improvements, and edit only the candidate program file unless the user asks for a broader change.
